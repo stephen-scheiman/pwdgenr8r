@@ -78,19 +78,20 @@ for (count = 1; count <= pwdLength; count++) {
 //Take the characters that we placed in the array and stringify them
 let tmppwd = buildtmppwd.join("");
 
-// console.log(tmppwd);
-}
+// return our generated password from the function so we can write it to the screen
+return (tmppwd);
+};
 
-// Write password to the #password input
+//Write password to the #password input
 function writePassword() {
   let password = generatePassword();
   let passwordText = document.querySelector("#password");
   passwordText.value = password;
 
-  // console.log(password);
-  // console.log(passwordText);
-  // console.log(passwordText.value);
-}
+  console.log(password);
+  console.log(passwordText);
+  console.log(passwordText.value);
+};
 
-// Add event listener to generate button
+//Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
