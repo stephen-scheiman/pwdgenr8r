@@ -1,5 +1,7 @@
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
+// Create the generate password function as a wrapper
+function generatePassword() {
 // Prompt the user for password length
 let pwdLength = window.prompt("Enter password length from 8 to 128 characters");
 // Test to make sure that it is a number between 8 and 128
@@ -14,7 +16,7 @@ if (useUpper == "Y") {
   if (useUpper == "N") {
 useUpper = false;} else {
 alert("Please enter Y or N only");
-useUpper = window.prompt("Would you like to include UPPER CASE characters? Y or N");
+useUpper = window.prompt("Would you like to include upper case characters? Y or N");
 };
 // Ask user if they want to include lower case characters
 let useLower = window.prompt("Would you like to include lower case characters? Y or N");
@@ -50,38 +52,44 @@ let lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"
 let numeric = [0,1,2,3,4,5,6,7,8,9];
 let symbols = ["!","@","#","$","%","^","&","*","(",")","-","+","=","_"];
 let characterPool = [];
+let charSelector;
+let buildtmppwd = [];
 
 // Start to build character pool based on user input
 if (useUpper == true) {
-  alert("Use Upper is True");
   characterPool = characterPool.concat(upperCase);
 }
 if (useLower == true) {
-  alert("Use Lower is True");
   characterPool = characterPool.concat(lowerCase);
 }
 if (useNumeric == true) {
-  alert("Use Numeric is True");
   characterPool = characterPool.concat(numeric);
 }
 if (useSymbol == true) {
-  alert("Use Symbols is True");
   characterPool = characterPool.concat(symbols);
 }
 
+// Use a randomly generated index to pick from the character pool until length requirement
+// is met
+for (count = 1; count <= pwdLength; count++) {
+  charSelector = Math.floor(Math.random() * characterPool.length);
+  buildtmppwd = buildtmppwd.concat(characterPool[charSelector]);
+}
+//Take the characters that we placed in the array and stringify them
+let tmppwd = buildtmppwd.join("");
 
-
-console.log(pwdLength);
-console.log(characterPool);
-
+// console.log(tmppwd);
+}
 
 // Write password to the #password input
 function writePassword() {
   let password = generatePassword();
   let passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 
+  // console.log(password);
+  // console.log(passwordText);
+  // console.log(passwordText.value);
 }
 
 // Add event listener to generate button
