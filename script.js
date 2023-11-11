@@ -88,10 +88,6 @@ function writePassword() {
   let password = generatePassword();
   let passwordText = document.querySelector("#password");
   passwordText.value = password;
-
-  console.log(password);
-  console.log(passwordText);
-  console.log(passwordText.value);
 };
 
 //Add event listener to generate button
