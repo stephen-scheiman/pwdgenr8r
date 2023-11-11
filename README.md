@@ -36,5 +36,10 @@ The following image shows the web application's appearance and functionality:
 
 ## Application URL
 
+https://stephen-scheiman.github.io/pwdgenr8r/
+
 ## Application Repo
+
+https://github.com/stephen-scheiman/pwdgenr8r
+
 
