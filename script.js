@@ -10,7 +10,7 @@ if ((pwdLength > 128) || (pwdLength < 8)) {
   pwdLength = window.prompt("Enter password length from 8 to 128 characters");
 } 
 // Ask user if they want to include upper case characters
-let useUpper = window.prompt("Would you like to include UPPER CASE characters? Y or N");
+let useUpper = window.prompt("Would you like to include upper case characters? Y or N");
 if (useUpper == "Y") {
   useUpper = true;} else 
   if (useUpper == "N") {
@@ -25,7 +25,7 @@ if (useLower == "Y") {
   if (useLower == "N") {
 useLower = false;} else {
 alert("Please enter Y or N only");
-useLower = window.prompt("Would you like to include UPPER CASE characters? Y or N");
+useLower = window.prompt("Would you like to include lower case characters? Y or N");
 };
 // As user if they want to inlcude symbols
 let useSymbol = window.prompt("Would you like to include symbols such as # and/or *? Y or N");
@@ -34,7 +34,7 @@ if (useSymbol == "Y") {
   if (useSymbol == "N") {
     useSymbol = false;} else {
 alert("Please enter Y or N only");
-useSymbol = window.prompt("Would you like to include UPPER CASE characters? Y or N");
+useSymbol = window.prompt("Would you like to include symbols such as # and/or *? Y or N");
 };
 // And finally ask if they want to include numbers
 let useNumeric = window.prompt("Would you like to include numbers? Y or N");
@@ -43,7 +43,7 @@ if (useNumeric == "Y") {
   if (useNumeric == "N") {
     useNumeric = false;} else {
 alert("Please enter Y or N only");
-useNumeric = window.prompt("Would you like to include UPPER CASE characters? Y or N");
+useNumeric = window.prompt("Would you like to include numbers? Y or N");
 };
 
 //Initialize arrays to hold varrious character groups
