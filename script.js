@@ -79,12 +79,6 @@ if (useSymbol == true) {
   characterPool = characterPool.concat(symbols);
 };
 
-// Test to ensure that user picked at least one character set, if not, start over
-// if (characterPool.length == 0){
-//   alert("You must choose at least one type of character");
-//   generatePassword();
-//};
-
 // Use a randomly generated index to pick from the character pool array until length requirement is met
 for (count = 1; count <= pwdLength; count++) {
   charSelector = Math.floor(Math.random() * characterPool.length);
