@@ -18,7 +18,7 @@ let characterPool = [];
 let pwdLength = window.prompt("Enter password length from 8 to 128 characters");
 // Test to make sure that it is a number between 8 and 128
 if ((pwdLength > 128) || (pwdLength < 8)) {
-  alert("That's not a number between 8 and 128");
+  alert("That's not a password length from 8 to 128 characters");
   pwdLength = window.prompt("Enter password length from 8 to 128 characters");
 } ;
 
@@ -78,6 +78,11 @@ if (useNumeric == true) {
 if (useSymbol == true) {
   characterPool = characterPool.concat(symbols);
 };
+
+if (characterPool.length == 0) {
+  alert("You must select at least one character set");
+  return ("No character set chosen, try again");
+}
 
 // Use a randomly generated index to pick from the character pool array until length requirement is met
 for (count = 1; count <= pwdLength; count++) {
